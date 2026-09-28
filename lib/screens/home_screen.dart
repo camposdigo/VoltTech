@@ -572,18 +572,22 @@ class _DealsSection extends StatelessWidget {
           const SizedBox(height: 14),
           const Text('Ofertas do Dia', style: TextStyle(fontSize: 28, fontWeight: FontWeight.w800)),
           const SizedBox(height: 28),
-          Flex(
-            direction: desktop ? Axis.horizontal : Axis.vertical,
-            children: [
-              for (var i = 0; i < deals.length; i++) ...[
-                Expanded(
-                  flex: desktop ? 1 : 0,
-                  child: _DealCard(product: deals[i], label: i == 0 ? 'SMARTPHONE DO DIA' : 'LAPTOP EM OFERTA'),
-                ),
-                if (i == 0) SizedBox(width: desktop ? 16 : 0, height: desktop ? 0 : 16),
+          if (desktop)
+            Row(
+              children: [
+                Expanded(child: _DealCard(product: deals[0], label: 'SMARTPHONE DO DIA')),
+                const SizedBox(width: 16),
+                Expanded(child: _DealCard(product: deals[1], label: 'LAPTOP EM OFERTA')),
               ],
-            ],
-          ),
+            )
+          else
+            Column(
+              children: [
+                _DealCard(product: deals[0], label: 'SMARTPHONE DO DIA'),
+                const SizedBox(height: 16),
+                _DealCard(product: deals[1], label: 'LAPTOP EM OFERTA'),
+              ],
+            ),
         ],
       ),
     );
