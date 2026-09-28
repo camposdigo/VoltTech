@@ -16,14 +16,17 @@ class ProductDetailsScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Detalhes do produto'),
+        title: Text(product.name),
         actions: [
           AnimatedBuilder(
             animation: store,
             builder: (context, _) => IconButton(
               onPressed: () async {
                 store.toggleFavorite(product);
-                await SupabaseService.instance.syncFavorite(product, store.isFavorite(product));
+                await SupabaseService.instance.syncFavorite(
+                  product,
+                  store.isFavorite(product),
+                );
               },
               icon: Icon(
                 store.isFavorite(product) ? Icons.favorite : Icons.favorite_border,
@@ -33,57 +36,146 @@ class ProductDetailsScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: ListView(
-        padding: const EdgeInsets.all(20),
-        children: [
-          Container(
-            height: 260,
-            decoration: BoxDecoration(
-              color: AppTheme.surface,
-              borderRadius: BorderRadius.circular(28),
+      body: LayoutBuilder(
+        builder: (context, constraints) {
+          final wide = constraints.maxWidth > 850;
+          final image = ClipRRect(
+            borderRadius: BorderRadius.circular(18),
+            child: AspectRatio(
+              aspectRatio: 1,
+              child: Image.network(
+                product.imageUrl,
+                fit: BoxFit.cover,
+                errorBuilder: (_, __, ___) => Container(
+                  color: AppTheme.surface,
+                  child: Icon(product.icon, size: 120),
+                ),
+              ),
             ),
-            child: Center(child: Icon(product.icon, size: 130, color: Colors.white70)),
-          ),
-          const SizedBox(height: 24),
-          Text(product.category.toUpperCase(), style: const TextStyle(color: AppTheme.primary, fontWeight: FontWeight.w800, letterSpacing: 1)),
-          const SizedBox(height: 8),
-          Text(product.name, style: const TextStyle(fontSize: 28, fontWeight: FontWeight.w900)),
-          const SizedBox(height: 10),
-          Row(children: [
-            const Icon(Icons.star_rounded, color: Colors.amber),
-            const SizedBox(width: 5),
-            Text(product.rating.toStringAsFixed(1), style: const TextStyle(fontWeight: FontWeight.w700)),
-            const SizedBox(width: 16),
-            Text(product.stock.toString() + ' unidades em estoque', style: const TextStyle(color: AppTheme.textSecondary)),
-          ]),
-          const SizedBox(height: 20),
-          Text(product.description, style: const TextStyle(color: AppTheme.textSecondary, height: 1.6, fontSize: 15)),
-          const SizedBox(height: 24),
-          Text(formatMoney(product.oldPrice), style: const TextStyle(color: AppTheme.textSecondary, decoration: TextDecoration.lineThrough)),
-          Text(formatMoney(product.price), style: const TextStyle(color: AppTheme.primary, fontSize: 28, fontWeight: FontWeight.w900)),
-          const SizedBox(height: 8),
-          const Text('ou em até 10x sem juros • Frete simulado grátis', style: TextStyle(color: AppTheme.textSecondary)),
-          const SizedBox(height: 26),
-          FilledButton.icon(
-            onPressed: () {
-              store.addToCart(product);
-              ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Produto adicionado ao carrinho')));
-            },
-            icon: const Icon(Icons.shopping_bag_outlined),
-            label: const Padding(
-              padding: EdgeInsets.symmetric(vertical: 14),
-              child: Text('ADICIONAR AO CARRINHO'),
-            ),
-          ),
-          const SizedBox(height: 10),
-          OutlinedButton(
-            onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const CartScreen())),
-            child: const Padding(
-              padding: EdgeInsets.symmetric(vertical: 14),
-              child: Text('IR PARA O CARRINHO'),
-            ),
-          ),
-        ],
+          );
+
+          final info = Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                product.category.toUpperCase(),
+                style: const TextStyle(
+                  color: AppTheme.primary,
+                  fontWeight: FontWeight.w800,
+                  letterSpacing: 1.2,
+                  fontSize: 11,
+                ),
+              ),
+              const SizedBox(height: 10),
+              Text(
+                product.name,
+                style: TextStyle(
+                  fontSize: wide ? 34 : 28,
+                  fontWeight: FontWeight.w900,
+                ),
+              ),
+              const SizedBox(height: 12),
+              Row(
+                children: [
+                  const Icon(Icons.star_rounded, color: Color(0xFFF59E0B)),
+                  const SizedBox(width: 5),
+                  Text(
+                    product.rating.toStringAsFixed(1) + ' · ' + product.reviews.toString() + ' avaliações',
+                    style: const TextStyle(color: AppTheme.textSecondary),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 24),
+              Text(
+                product.description,
+                style: const TextStyle(
+                  color: AppTheme.textSecondary,
+                  height: 1.6,
+                  fontSize: 15,
+                ),
+              ),
+              const SizedBox(height: 28),
+              Text(
+                formatMoney(product.oldPrice),
+                style: const TextStyle(
+                  color: AppTheme.textSecondary,
+                  decoration: TextDecoration.lineThrough,
+                ),
+              ),
+              Text(
+                formatMoney(product.price),
+                style: const TextStyle(
+                  color: AppTheme.textPrimary,
+                  fontSize: 32,
+                  fontWeight: FontWeight.w900,
+                ),
+              ),
+              const SizedBox(height: 8),
+              Text(
+                product.stock.toString() + ' unidades em estoque · até 10x sem juros',
+                style: const TextStyle(color: AppTheme.textSecondary),
+              ),
+              const SizedBox(height: 26),
+              SizedBox(
+                width: double.infinity,
+                child: FilledButton.icon(
+                  onPressed: () {
+                    store.addToCart(product);
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(content: Text('Produto adicionado ao carrinho')),
+                    );
+                  },
+                  icon: const Icon(Icons.shopping_bag_outlined),
+                  label: const Padding(
+                    padding: EdgeInsets.symmetric(vertical: 15),
+                    child: Text('ADICIONAR AO CARRINHO'),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 10),
+              SizedBox(
+                width: double.infinity,
+                child: OutlinedButton(
+                  onPressed: () => Navigator.of(context).push(
+                    MaterialPageRoute(builder: (_) => const CartScreen()),
+                  ),
+                  child: const Padding(
+                    padding: EdgeInsets.symmetric(vertical: 15),
+                    child: Text('VER CARRINHO'),
+                  ),
+                ),
+              ),
+            ],
+          );
+
+          if (wide) {
+            return Center(
+              child: ConstrainedBox(
+                constraints: const BoxConstraints(maxWidth: 1100),
+                child: Padding(
+                  padding: const EdgeInsets.all(28),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Expanded(child: image),
+                      const SizedBox(width: 42),
+                      Expanded(child: info),
+                    ],
+                  ),
+                ),
+              ),
+            );
+          }
+
+          return ListView(
+            padding: const EdgeInsets.all(20),
+            children: [
+              image,
+              const SizedBox(height: 24),
+              info,
+            ],
+          );
+        },
       ),
     );
   }
