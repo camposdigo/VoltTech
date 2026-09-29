@@ -613,16 +613,18 @@ class _DealCard extends StatelessWidget {
         children: [
           SizedBox(
             width: 170,
+            height: 210,
             child: ClipRRect(
               borderRadius: const BorderRadius.horizontal(left: Radius.circular(13)),
-              child: SizedBox.expand(
-                child: Image.network(
-                  product.imageUrl,
-                  fit: BoxFit.cover,
-                  errorBuilder: (_, __, ___) => Container(
-                    color: AppTheme.surface,
-                    child: Icon(product.icon, size: 62),
-                  ),
+              child: Image.network(
+                product.imageUrl,
+                width: 170,
+                height: 210,
+                fit: BoxFit.cover,
+                errorBuilder: (_, __, ___) => Container(
+                  color: AppTheme.surface,
+                  alignment: Alignment.center,
+                  child: Icon(product.icon, size: 62),
                 ),
               ),
             ),
