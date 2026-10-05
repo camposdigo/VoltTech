@@ -1,0 +1,1545 @@
+[
+  {
+    "id": "volt-pocket",
+    "category_id": "celular",
+    "name": "Volt Pocket",
+    "price": 899,
+    "old_price": 1099,
+    "short_description": "O essencial, sem pesar no bolso.",
+    "description": "Mensagens, chamadas e vídeos com simplicidade.",
+    "brand": "VoltTech",
+    "stock": 20,
+    "image_url": "https://example.invalid/product.jpg",
+    "categories": {
+      "name": "Celular"
+    },
+    "product_explanations": {
+      "ideal_for": "O essencial, sem pesar no bolso.",
+      "good_for": [
+        "Uso básico",
+        "Redes sociais"
+      ],
+      "not_recommended_for": [
+        "Jogos exigentes",
+        "Fotografia profissional"
+      ],
+      "performance_explanation": "Abre os aplicativos do dia a dia; pode demorar com muitos abertos.",
+      "battery_explanation": "Boa autonomia para uma rotina leve; jogos gastam mais.",
+      "display_explanation": "Tela ampla para ler mensagens e assistir a vídeos.",
+      "pros": [
+        "Preço acessível",
+        "Uso simples"
+      ],
+      "attention_points": [
+        "Câmera simples à noite"
+      ],
+      "why_buy": "Mensagens, chamadas e vídeos com simplicidade.",
+      "user_profile": "Perfil de demonstração"
+    },
+    "product_use_cases": [
+      {
+        "use_case": "Uso básico",
+        "score": 5
+      },
+      {
+        "use_case": "Redes sociais",
+        "score": 4
+      },
+      {
+        "use_case": "Fotos",
+        "score": 2
+      },
+      {
+        "use_case": "Trabalho",
+        "score": 3
+      },
+      {
+        "use_case": "Jogos",
+        "score": 1
+      },
+      {
+        "use_case": "Bateria longa",
+        "score": 4
+      },
+      {
+        "use_case": "Bateria",
+        "score": 4
+      },
+      {
+        "use_case": "Câmera",
+        "score": 2
+      },
+      {
+        "use_case": "Tela",
+        "score": 3
+      },
+      {
+        "use_case": "Desempenho",
+        "score": 2
+      },
+      {
+        "use_case": "Durabilidade",
+        "score": 3
+      },
+      {
+        "use_case": "Portabilidade",
+        "score": 4
+      }
+    ],
+    "product_specs": [
+      {
+        "label": "Armazenamento",
+        "value": "128 GB",
+        "sort_order": 0
+      },
+      {
+        "label": "Memória",
+        "value": "4 GB",
+        "sort_order": 1
+      },
+      {
+        "label": "Tela",
+        "value": "6,5 polegadas",
+        "sort_order": 2
+      },
+      {
+        "label": "Bateria",
+        "value": "5.000 mAh",
+        "sort_order": 3
+      }
+    ]
+  },
+  {
+    "id": "volt-photo",
+    "category_id": "celular",
+    "name": "Volt Photo",
+    "price": 2199,
+    "old_price": 2499,
+    "short_description": "Guarde seus melhores momentos.",
+    "description": "Boa escolha para fotos de viagens e redes sociais.",
+    "brand": "VoltTech",
+    "stock": 20,
+    "image_url": "https://example.invalid/product.jpg",
+    "categories": {
+      "name": "Celular"
+    },
+    "product_explanations": {
+      "ideal_for": "Guarde seus melhores momentos.",
+      "good_for": [
+        "Fotos",
+        "Redes sociais"
+      ],
+      "not_recommended_for": [
+        "Jogos no máximo"
+      ],
+      "performance_explanation": "Alterna entre redes sociais, mapas e mensagens com fluidez.",
+      "battery_explanation": "Acompanha um dia de uso moderado, dependendo do brilho e da câmera.",
+      "display_explanation": "Cores vivas para ver suas fotos com clareza.",
+      "pros": [
+        "Fotos detalhadas de dia",
+        "Tela com cores vivas"
+      ],
+      "attention_points": [
+        "Fotografar por muito tempo consome bateria"
+      ],
+      "why_buy": "Boa escolha para fotos de viagens e redes sociais.",
+      "user_profile": "Perfil de demonstração"
+    },
+    "product_use_cases": [
+      {
+        "use_case": "Uso básico",
+        "score": 5
+      },
+      {
+        "use_case": "Redes sociais",
+        "score": 5
+      },
+      {
+        "use_case": "Fotos",
+        "score": 5
+      },
+      {
+        "use_case": "Trabalho",
+        "score": 4
+      },
+      {
+        "use_case": "Jogos",
+        "score": 3
+      },
+      {
+        "use_case": "Bateria longa",
+        "score": 3
+      },
+      {
+        "use_case": "Bateria",
+        "score": 3
+      },
+      {
+        "use_case": "Câmera",
+        "score": 5
+      },
+      {
+        "use_case": "Tela",
+        "score": 5
+      },
+      {
+        "use_case": "Desempenho",
+        "score": 4
+      },
+      {
+        "use_case": "Durabilidade",
+        "score": 3
+      },
+      {
+        "use_case": "Portabilidade",
+        "score": 4
+      }
+    ],
+    "product_specs": [
+      {
+        "label": "Armazenamento",
+        "value": "256 GB",
+        "sort_order": 0
+      },
+      {
+        "label": "Memória",
+        "value": "8 GB",
+        "sort_order": 1
+      },
+      {
+        "label": "Câmera principal",
+        "value": "50 MP",
+        "sort_order": 2
+      },
+      {
+        "label": "Tela",
+        "value": "6,4 polegadas OLED",
+        "sort_order": 3
+      }
+    ]
+  },
+  {
+    "id": "volt-endurance",
+    "category_id": "celular",
+    "name": "Volt Endurance",
+    "price": 1599,
+    "old_price": null,
+    "short_description": "Mais tempo longe da tomada.",
+    "description": "Para quem passa o dia fora e precisa continuar conectado.",
+    "brand": "VoltTech",
+    "stock": 20,
+    "image_url": "https://example.invalid/product.jpg",
+    "categories": {
+      "name": "Celular"
+    },
+    "product_explanations": {
+      "ideal_for": "Mais tempo longe da tomada.",
+      "good_for": [
+        "Bateria longa",
+        "Trabalho"
+      ],
+      "not_recommended_for": [
+        "Fotos profissionais"
+      ],
+      "performance_explanation": "Responde bem a chamadas, e-mails, mapas e aplicativos de trabalho.",
+      "battery_explanation": "Bateria maior para rotinas longas; autonomia varia com o uso.",
+      "display_explanation": "Boa leitura em ambientes internos; sol forte exige mais brilho.",
+      "pros": [
+        "Bateria generosa",
+        "Espaço para aplicativos"
+      ],
+      "attention_points": [
+        "Mais pesado que modelos compactos"
+      ],
+      "why_buy": "Para quem passa o dia fora e precisa continuar conectado.",
+      "user_profile": "Perfil de demonstração"
+    },
+    "product_use_cases": [
+      {
+        "use_case": "Uso básico",
+        "score": 5
+      },
+      {
+        "use_case": "Redes sociais",
+        "score": 4
+      },
+      {
+        "use_case": "Fotos",
+        "score": 3
+      },
+      {
+        "use_case": "Trabalho",
+        "score": 5
+      },
+      {
+        "use_case": "Jogos",
+        "score": 2
+      },
+      {
+        "use_case": "Bateria longa",
+        "score": 5
+      },
+      {
+        "use_case": "Bateria",
+        "score": 5
+      },
+      {
+        "use_case": "Câmera",
+        "score": 3
+      },
+      {
+        "use_case": "Tela",
+        "score": 3
+      },
+      {
+        "use_case": "Desempenho",
+        "score": 3
+      },
+      {
+        "use_case": "Durabilidade",
+        "score": 4
+      },
+      {
+        "use_case": "Portabilidade",
+        "score": 2
+      }
+    ],
+    "product_specs": [
+      {
+        "label": "Armazenamento",
+        "value": "256 GB",
+        "sort_order": 0
+      },
+      {
+        "label": "Memória",
+        "value": "6 GB",
+        "sort_order": 1
+      },
+      {
+        "label": "Bateria",
+        "value": "6.000 mAh",
+        "sort_order": 2
+      },
+      {
+        "label": "Tela",
+        "value": "6,7 polegadas",
+        "sort_order": 3
+      }
+    ]
+  },
+  {
+    "id": "volt-book-study",
+    "category_id": "notebook",
+    "name": "Volt Book Study",
+    "price": 2499,
+    "old_price": 2799,
+    "short_description": "Seu parceiro de faculdade.",
+    "description": "Leve para levar à aula e rápido para trabalhos e pesquisas.",
+    "brand": "VoltTech",
+    "stock": 20,
+    "image_url": "https://example.invalid/product.jpg",
+    "categories": {
+      "name": "Notebook"
+    },
+    "product_explanations": {
+      "ideal_for": "Seu parceiro de faculdade.",
+      "good_for": [
+        "Faculdade",
+        "Uso básico",
+        "Trabalho"
+      ],
+      "not_recommended_for": [
+        "Jogos pesados",
+        "Edição profissional de vídeo"
+      ],
+      "performance_explanation": "Documentos, aulas online e navegação funcionam bem; evite muitos programas pesados juntos.",
+      "battery_explanation": "Boa para algumas aulas longe da tomada; videochamadas reduzem a duração.",
+      "display_explanation": "Confortável para textos e planilhas; não é voltada a edição de cores.",
+      "pros": [
+        "Fácil de transportar",
+        "Armazenamento rápido"
+      ],
+      "attention_points": [
+        "Memória limitada para projetos grandes"
+      ],
+      "why_buy": "Leve para levar à aula e rápido para trabalhos e pesquisas.",
+      "user_profile": "Perfil de demonstração"
+    },
+    "product_use_cases": [
+      {
+        "use_case": "Faculdade",
+        "score": 5
+      },
+      {
+        "use_case": "Trabalho",
+        "score": 4
+      },
+      {
+        "use_case": "Programação",
+        "score": 3
+      },
+      {
+        "use_case": "Jogos",
+        "score": 1
+      },
+      {
+        "use_case": "Edição de vídeo/foto",
+        "score": 2
+      },
+      {
+        "use_case": "Uso básico",
+        "score": 5
+      },
+      {
+        "use_case": "Bateria",
+        "score": 4
+      },
+      {
+        "use_case": "Tela",
+        "score": 3
+      },
+      {
+        "use_case": "Desempenho",
+        "score": 3
+      },
+      {
+        "use_case": "Durabilidade",
+        "score": 3
+      },
+      {
+        "use_case": "Portabilidade",
+        "score": 5
+      }
+    ],
+    "product_specs": [
+      {
+        "label": "Memória",
+        "value": "8 GB",
+        "sort_order": 0
+      },
+      {
+        "label": "Armazenamento",
+        "value": "256 GB SSD",
+        "sort_order": 1
+      },
+      {
+        "label": "Tela",
+        "value": "14 polegadas Full HD",
+        "sort_order": 2
+      },
+      {
+        "label": "Peso",
+        "value": "1,4 kg",
+        "sort_order": 3
+      }
+    ]
+  },
+  {
+    "id": "volt-book-work",
+    "category_id": "notebook",
+    "name": "Volt Book Work",
+    "price": 3999,
+    "old_price": 4499,
+    "short_description": "Trabalhe com vários programas abertos.",
+    "description": "Equilíbrio para trabalho, faculdade e programação.",
+    "brand": "VoltTech",
+    "stock": 20,
+    "image_url": "https://example.invalid/product.jpg",
+    "categories": {
+      "name": "Notebook"
+    },
+    "product_explanations": {
+      "ideal_for": "Trabalhe com vários programas abertos.",
+      "good_for": [
+        "Trabalho",
+        "Programação",
+        "Faculdade"
+      ],
+      "not_recommended_for": [
+        "Jogos com gráficos no máximo"
+      ],
+      "performance_explanation": "Abre muitas abas e ferramentas de trabalho ao mesmo tempo sem tanta espera.",
+      "battery_explanation": "Boa para mobilidade; tarefas intensas pedem uma tomada por perto.",
+      "display_explanation": "Tela nítida que ajuda a organizar janelas e ler código.",
+      "pros": [
+        "Bom para multitarefa",
+        "Armazenamento espaçoso"
+      ],
+      "attention_points": [
+        "Sem placa de vídeo dedicada"
+      ],
+      "why_buy": "Equilíbrio para trabalho, faculdade e programação.",
+      "user_profile": "Perfil de demonstração"
+    },
+    "product_use_cases": [
+      {
+        "use_case": "Faculdade",
+        "score": 5
+      },
+      {
+        "use_case": "Trabalho",
+        "score": 5
+      },
+      {
+        "use_case": "Programação",
+        "score": 5
+      },
+      {
+        "use_case": "Jogos",
+        "score": 2
+      },
+      {
+        "use_case": "Edição de vídeo/foto",
+        "score": 3
+      },
+      {
+        "use_case": "Uso básico",
+        "score": 5
+      },
+      {
+        "use_case": "Bateria",
+        "score": 4
+      },
+      {
+        "use_case": "Tela",
+        "score": 4
+      },
+      {
+        "use_case": "Desempenho",
+        "score": 4
+      },
+      {
+        "use_case": "Durabilidade",
+        "score": 4
+      },
+      {
+        "use_case": "Portabilidade",
+        "score": 4
+      }
+    ],
+    "product_specs": [
+      {
+        "label": "Memória",
+        "value": "16 GB",
+        "sort_order": 0
+      },
+      {
+        "label": "Armazenamento",
+        "value": "512 GB SSD",
+        "sort_order": 1
+      },
+      {
+        "label": "Tela",
+        "value": "15,6 polegadas Full HD",
+        "sort_order": 2
+      },
+      {
+        "label": "Peso",
+        "value": "1,7 kg",
+        "sort_order": 3
+      }
+    ]
+  },
+  {
+    "id": "volt-book-play",
+    "category_id": "notebook",
+    "name": "Volt Book Play",
+    "price": 5999,
+    "old_price": 6599,
+    "short_description": "Potência para jogar e criar.",
+    "description": "Para jogos, edição e projetos que exigem mais desempenho.",
+    "brand": "VoltTech",
+    "stock": 20,
+    "image_url": "https://example.invalid/product.jpg",
+    "categories": {
+      "name": "Notebook"
+    },
+    "product_explanations": {
+      "ideal_for": "Potência para jogar e criar.",
+      "good_for": [
+        "Jogos",
+        "Edição de vídeo/foto",
+        "Programação"
+      ],
+      "not_recommended_for": [
+        "Quem só navega e quer economizar"
+      ],
+      "performance_explanation": "Placa de vídeo dedicada ajuda em jogos e edição; desempenho depende de cada programa.",
+      "battery_explanation": "Jogos consomem bastante energia: use na tomada para maior desempenho.",
+      "display_explanation": "Movimentos mais suaves em jogos e boa área para editar.",
+      "pros": [
+        "Mais força para tarefas pesadas",
+        "Tela fluida"
+      ],
+      "attention_points": [
+        "Mais pesado",
+        "Ventoinhas audíveis em jogos"
+      ],
+      "why_buy": "Para jogos, edição e projetos que exigem mais desempenho.",
+      "user_profile": "Perfil de demonstração"
+    },
+    "product_use_cases": [
+      {
+        "use_case": "Faculdade",
+        "score": 4
+      },
+      {
+        "use_case": "Trabalho",
+        "score": 5
+      },
+      {
+        "use_case": "Programação",
+        "score": 5
+      },
+      {
+        "use_case": "Jogos",
+        "score": 5
+      },
+      {
+        "use_case": "Edição de vídeo/foto",
+        "score": 5
+      },
+      {
+        "use_case": "Uso básico",
+        "score": 5
+      },
+      {
+        "use_case": "Bateria",
+        "score": 2
+      },
+      {
+        "use_case": "Tela",
+        "score": 5
+      },
+      {
+        "use_case": "Desempenho",
+        "score": 5
+      },
+      {
+        "use_case": "Durabilidade",
+        "score": 4
+      },
+      {
+        "use_case": "Portabilidade",
+        "score": 2
+      }
+    ],
+    "product_specs": [
+      {
+        "label": "Memória",
+        "value": "16 GB",
+        "sort_order": 0
+      },
+      {
+        "label": "Armazenamento",
+        "value": "1 TB SSD",
+        "sort_order": 1
+      },
+      {
+        "label": "Tela",
+        "value": "15,6 polegadas · 144 Hz",
+        "sort_order": 2
+      },
+      {
+        "label": "Vídeo",
+        "value": "Placa dedicada · 6 GB",
+        "sort_order": 3
+      }
+    ]
+  },
+  {
+    "id": "volt-buds-go",
+    "category_id": "fone",
+    "name": "Volt Buds Go",
+    "price": 149,
+    "old_price": null,
+    "short_description": "Sua trilha sonora no caminho.",
+    "description": "Fones compactos para música e transporte.",
+    "brand": "VoltTech",
+    "stock": 20,
+    "image_url": "https://example.invalid/product.jpg",
+    "categories": {
+      "name": "Fone"
+    },
+    "product_explanations": {
+      "ideal_for": "Sua trilha sonora no caminho.",
+      "good_for": [
+        "Uso cotidiano",
+        "Transporte",
+        "Música"
+      ],
+      "not_recommended_for": [
+        "Jogos competitivos"
+      ],
+      "performance_explanation": "Som equilibrado para músicas e podcasts; conexão sem fio pode ter atraso em jogos.",
+      "battery_explanation": "Estojo recarrega os fones entre os trajetos.",
+      "display_explanation": "Sem tela; controles por toque.",
+      "pros": [
+        "Cabe no bolso",
+        "Sem fios"
+      ],
+      "attention_points": [
+        "Não possui cancelamento ativo de ruído"
+      ],
+      "why_buy": "Fones compactos para música e transporte.",
+      "user_profile": "Perfil de demonstração"
+    },
+    "product_use_cases": [
+      {
+        "use_case": "Transporte",
+        "score": 4
+      },
+      {
+        "use_case": "Academia",
+        "score": 3
+      },
+      {
+        "use_case": "Trabalho/reuniões",
+        "score": 3
+      },
+      {
+        "use_case": "Música",
+        "score": 4
+      },
+      {
+        "use_case": "Jogos",
+        "score": 2
+      },
+      {
+        "use_case": "Uso cotidiano",
+        "score": 5
+      },
+      {
+        "use_case": "Bateria",
+        "score": 3
+      },
+      {
+        "use_case": "Desempenho",
+        "score": 3
+      },
+      {
+        "use_case": "Durabilidade",
+        "score": 3
+      },
+      {
+        "use_case": "Portabilidade",
+        "score": 5
+      }
+    ],
+    "product_specs": [
+      {
+        "label": "Conexão",
+        "value": "Bluetooth",
+        "sort_order": 0
+      },
+      {
+        "label": "Formato",
+        "value": "Intra-auricular",
+        "sort_order": 1
+      },
+      {
+        "label": "Autonomia estimada",
+        "value": "5 horas por carga",
+        "sort_order": 2
+      },
+      {
+        "label": "Microfone",
+        "value": "Integrado",
+        "sort_order": 3
+      }
+    ]
+  },
+  {
+    "id": "volt-silence",
+    "category_id": "fone",
+    "name": "Volt Silence",
+    "price": 599,
+    "old_price": 699,
+    "short_description": "Menos barulho, mais concentração.",
+    "description": "Ajuda a reduzir o ruído constante no transporte e no trabalho.",
+    "brand": "VoltTech",
+    "stock": 20,
+    "image_url": "https://example.invalid/product.jpg",
+    "categories": {
+      "name": "Fone"
+    },
+    "product_explanations": {
+      "ideal_for": "Menos barulho, mais concentração.",
+      "good_for": [
+        "Transporte",
+        "Trabalho/reuniões",
+        "Música"
+      ],
+      "not_recommended_for": [
+        "Treinos intensos"
+      ],
+      "performance_explanation": "Voz e música ficam mais fáceis de ouvir com redução de ruídos contínuos.",
+      "battery_explanation": "Várias sessões de uso por carga; cancelamento ligado reduz a autonomia.",
+      "display_explanation": "Sem tela; botões físicos fáceis de encontrar.",
+      "pros": [
+        "Redução ativa de ruído",
+        "Conforto para trabalhar"
+      ],
+      "attention_points": [
+        "Não elimina todas as vozes ao redor",
+        "Ocupa mais espaço"
+      ],
+      "why_buy": "Ajuda a reduzir o ruído constante no transporte e no trabalho.",
+      "user_profile": "Perfil de demonstração"
+    },
+    "product_use_cases": [
+      {
+        "use_case": "Transporte",
+        "score": 5
+      },
+      {
+        "use_case": "Academia",
+        "score": 1
+      },
+      {
+        "use_case": "Trabalho/reuniões",
+        "score": 5
+      },
+      {
+        "use_case": "Música",
+        "score": 5
+      },
+      {
+        "use_case": "Jogos",
+        "score": 3
+      },
+      {
+        "use_case": "Uso cotidiano",
+        "score": 4
+      },
+      {
+        "use_case": "Bateria",
+        "score": 5
+      },
+      {
+        "use_case": "Desempenho",
+        "score": 5
+      },
+      {
+        "use_case": "Durabilidade",
+        "score": 4
+      },
+      {
+        "use_case": "Portabilidade",
+        "score": 3
+      }
+    ],
+    "product_specs": [
+      {
+        "label": "Conexão",
+        "value": "Bluetooth e cabo",
+        "sort_order": 0
+      },
+      {
+        "label": "Formato",
+        "value": "Over-ear",
+        "sort_order": 1
+      },
+      {
+        "label": "Recurso",
+        "value": "Cancelamento ativo de ruído",
+        "sort_order": 2
+      },
+      {
+        "label": "Autonomia estimada",
+        "value": "30 horas",
+        "sort_order": 3
+      }
+    ]
+  },
+  {
+    "id": "volt-buds-move",
+    "category_id": "fone",
+    "name": "Volt Buds Move",
+    "price": 299,
+    "old_price": 349,
+    "short_description": "Acompanhe seu ritmo.",
+    "description": "Encaixe firme para caminhadas e exercícios.",
+    "brand": "VoltTech",
+    "stock": 20,
+    "image_url": "https://example.invalid/product.jpg",
+    "categories": {
+      "name": "Fone"
+    },
+    "product_explanations": {
+      "ideal_for": "Acompanhe seu ritmo.",
+      "good_for": [
+        "Academia",
+        "Uso cotidiano"
+      ],
+      "not_recommended_for": [
+        "Natação"
+      ],
+      "performance_explanation": "Músicas e podcasts acompanham o treino com controles simples.",
+      "battery_explanation": "Estojo oferece recargas extras durante a semana, conforme o uso.",
+      "display_explanation": "Sem tela; comandos nos fones.",
+      "pros": [
+        "Encaixe com suporte",
+        "Resiste a respingos"
+      ],
+      "attention_points": [
+        "Não pode ser submerso"
+      ],
+      "why_buy": "Encaixe firme para caminhadas e exercícios.",
+      "user_profile": "Perfil de demonstração"
+    },
+    "product_use_cases": [
+      {
+        "use_case": "Transporte",
+        "score": 4
+      },
+      {
+        "use_case": "Academia",
+        "score": 5
+      },
+      {
+        "use_case": "Trabalho/reuniões",
+        "score": 3
+      },
+      {
+        "use_case": "Música",
+        "score": 4
+      },
+      {
+        "use_case": "Jogos",
+        "score": 2
+      },
+      {
+        "use_case": "Uso cotidiano",
+        "score": 5
+      },
+      {
+        "use_case": "Bateria",
+        "score": 4
+      },
+      {
+        "use_case": "Desempenho",
+        "score": 3
+      },
+      {
+        "use_case": "Durabilidade",
+        "score": 5
+      },
+      {
+        "use_case": "Portabilidade",
+        "score": 5
+      }
+    ],
+    "product_specs": [
+      {
+        "label": "Conexão",
+        "value": "Bluetooth",
+        "sort_order": 0
+      },
+      {
+        "label": "Proteção",
+        "value": "IPX4",
+        "sort_order": 1
+      },
+      {
+        "label": "Autonomia estimada",
+        "value": "7 horas por carga",
+        "sort_order": 2
+      },
+      {
+        "label": "Encaixe",
+        "value": "Com suporte esportivo",
+        "sort_order": 3
+      }
+    ]
+  },
+  {
+    "id": "volt-tab-read",
+    "category_id": "tablet",
+    "name": "Volt Tab Read",
+    "price": 1099,
+    "old_price": 1299,
+    "short_description": "Leitura e vídeos com mais espaço.",
+    "description": "Uma tela maior para estudar, ler e se divertir.",
+    "brand": "VoltTech",
+    "stock": 20,
+    "image_url": "https://example.invalid/product.jpg",
+    "categories": {
+      "name": "Tablet"
+    },
+    "product_explanations": {
+      "ideal_for": "Leitura e vídeos com mais espaço.",
+      "good_for": [
+        "Leitura",
+        "Estudos",
+        "Vídeos"
+      ],
+      "not_recommended_for": [
+        "Desenho profissional",
+        "Substituir um notebook de trabalho"
+      ],
+      "performance_explanation": "Ideal para livros, aulas e streaming; tarefas exigentes podem ficar lentas.",
+      "battery_explanation": "Boa autonomia para leitura com brilho moderado.",
+      "display_explanation": "Mais confortável que um celular para ler PDFs.",
+      "pros": [
+        "Tela ampla",
+        "Bom para leitura"
+      ],
+      "attention_points": [
+        "Caneta ativa não incluída"
+      ],
+      "why_buy": "Uma tela maior para estudar, ler e se divertir.",
+      "user_profile": "Perfil de demonstração"
+    },
+    "product_use_cases": [
+      {
+        "use_case": "Leitura",
+        "score": 5
+      },
+      {
+        "use_case": "Estudos",
+        "score": 4
+      },
+      {
+        "use_case": "Vídeos",
+        "score": 4
+      },
+      {
+        "use_case": "Desenho",
+        "score": 2
+      },
+      {
+        "use_case": "Trabalho",
+        "score": 2
+      },
+      {
+        "use_case": "Jogos",
+        "score": 2
+      },
+      {
+        "use_case": "Bateria",
+        "score": 4
+      },
+      {
+        "use_case": "Tela",
+        "score": 4
+      },
+      {
+        "use_case": "Desempenho",
+        "score": 2
+      },
+      {
+        "use_case": "Durabilidade",
+        "score": 3
+      },
+      {
+        "use_case": "Portabilidade",
+        "score": 4
+      }
+    ],
+    "product_specs": [
+      {
+        "label": "Tela",
+        "value": "10,1 polegadas",
+        "sort_order": 0
+      },
+      {
+        "label": "Memória",
+        "value": "4 GB",
+        "sort_order": 1
+      },
+      {
+        "label": "Armazenamento",
+        "value": "64 GB",
+        "sort_order": 2
+      },
+      {
+        "label": "Conexão",
+        "value": "Wi-Fi",
+        "sort_order": 3
+      }
+    ]
+  },
+  {
+    "id": "volt-tab-note",
+    "category_id": "tablet",
+    "name": "Volt Tab Note",
+    "price": 2399,
+    "old_price": 2699,
+    "short_description": "Suas ideias, direto na tela.",
+    "description": "Anotações e desenhos para quem aprende criando.",
+    "brand": "VoltTech",
+    "stock": 20,
+    "image_url": "https://example.invalid/product.jpg",
+    "categories": {
+      "name": "Tablet"
+    },
+    "product_explanations": {
+      "ideal_for": "Suas ideias, direto na tela.",
+      "good_for": [
+        "Estudos",
+        "Desenho",
+        "Trabalho"
+      ],
+      "not_recommended_for": [
+        "Programas exclusivos de computador"
+      ],
+      "performance_explanation": "Abre anotações, PDFs e aulas lado a lado com boa fluidez.",
+      "battery_explanation": "Boa para estudar; vídeo e brilho alto exigem mais recargas.",
+      "display_explanation": "Tela com boa definição e suporte à caneta.",
+      "pros": [
+        "Caneta incluída",
+        "Bom para anotações"
+      ],
+      "attention_points": [
+        "Teclado vendido separadamente"
+      ],
+      "why_buy": "Anotações e desenhos para quem aprende criando.",
+      "user_profile": "Perfil de demonstração"
+    },
+    "product_use_cases": [
+      {
+        "use_case": "Leitura",
+        "score": 5
+      },
+      {
+        "use_case": "Estudos",
+        "score": 5
+      },
+      {
+        "use_case": "Vídeos",
+        "score": 5
+      },
+      {
+        "use_case": "Desenho",
+        "score": 5
+      },
+      {
+        "use_case": "Trabalho",
+        "score": 4
+      },
+      {
+        "use_case": "Jogos",
+        "score": 3
+      },
+      {
+        "use_case": "Bateria",
+        "score": 4
+      },
+      {
+        "use_case": "Tela",
+        "score": 5
+      },
+      {
+        "use_case": "Desempenho",
+        "score": 4
+      },
+      {
+        "use_case": "Durabilidade",
+        "score": 4
+      },
+      {
+        "use_case": "Portabilidade",
+        "score": 4
+      }
+    ],
+    "product_specs": [
+      {
+        "label": "Tela",
+        "value": "11 polegadas",
+        "sort_order": 0
+      },
+      {
+        "label": "Memória",
+        "value": "8 GB",
+        "sort_order": 1
+      },
+      {
+        "label": "Armazenamento",
+        "value": "128 GB",
+        "sort_order": 2
+      },
+      {
+        "label": "Caneta",
+        "value": "Incluída",
+        "sort_order": 3
+      }
+    ]
+  },
+  {
+    "id": "volt-tab-mini",
+    "category_id": "tablet",
+    "name": "Volt Tab Mini",
+    "price": 1599,
+    "old_price": null,
+    "short_description": "Leve sua leitura para qualquer lugar.",
+    "description": "Compacto para transporte, livros e navegação.",
+    "brand": "VoltTech",
+    "stock": 20,
+    "image_url": "https://example.invalid/product.jpg",
+    "categories": {
+      "name": "Tablet"
+    },
+    "product_explanations": {
+      "ideal_for": "Leve sua leitura para qualquer lugar.",
+      "good_for": [
+        "Leitura",
+        "Vídeos"
+      ],
+      "not_recommended_for": [
+        "Planilhas grandes"
+      ],
+      "performance_explanation": "Responde bem a leitura, mapas e vídeos; espaço menor para trabalhar.",
+      "battery_explanation": "Boa para leituras no caminho; varia com conexão e brilho.",
+      "display_explanation": "Tela compacta para segurar por mais tempo.",
+      "pros": [
+        "Cabe em bolsas pequenas",
+        "Leve"
+      ],
+      "attention_points": [
+        "Área pequena para desenhar"
+      ],
+      "why_buy": "Compacto para transporte, livros e navegação.",
+      "user_profile": "Perfil de demonstração"
+    },
+    "product_use_cases": [
+      {
+        "use_case": "Leitura",
+        "score": 5
+      },
+      {
+        "use_case": "Estudos",
+        "score": 4
+      },
+      {
+        "use_case": "Vídeos",
+        "score": 4
+      },
+      {
+        "use_case": "Desenho",
+        "score": 2
+      },
+      {
+        "use_case": "Trabalho",
+        "score": 3
+      },
+      {
+        "use_case": "Jogos",
+        "score": 3
+      },
+      {
+        "use_case": "Bateria",
+        "score": 4
+      },
+      {
+        "use_case": "Tela",
+        "score": 3
+      },
+      {
+        "use_case": "Desempenho",
+        "score": 3
+      },
+      {
+        "use_case": "Durabilidade",
+        "score": 3
+      },
+      {
+        "use_case": "Portabilidade",
+        "score": 5
+      }
+    ],
+    "product_specs": [
+      {
+        "label": "Tela",
+        "value": "8,4 polegadas",
+        "sort_order": 0
+      },
+      {
+        "label": "Memória",
+        "value": "6 GB",
+        "sort_order": 1
+      },
+      {
+        "label": "Armazenamento",
+        "value": "128 GB",
+        "sort_order": 2
+      },
+      {
+        "label": "Peso",
+        "value": "330 g",
+        "sort_order": 3
+      }
+    ]
+  },
+  {
+    "id": "volt-power",
+    "category_id": "acessorios",
+    "name": "Volt Power 20",
+    "price": 199,
+    "old_price": 249,
+    "short_description": "Uma reserva de energia na bolsa.",
+    "description": "Carregador portátil para dias longe da tomada.",
+    "brand": "VoltTech",
+    "stock": 20,
+    "image_url": "https://example.invalid/product.jpg",
+    "categories": {
+      "name": "Acessórios"
+    },
+    "product_explanations": {
+      "ideal_for": "Uma reserva de energia na bolsa.",
+      "good_for": [
+        "Viagens",
+        "Carregamento"
+      ],
+      "not_recommended_for": [
+        "Carregar notebooks de alta potência"
+      ],
+      "performance_explanation": "Carrega dispositivos compatíveis por USB; velocidade varia com cabo e aparelho.",
+      "battery_explanation": "Reserva de energia para recarregar o celular ao longo do dia.",
+      "display_explanation": "Indicador mostra o nível de carga.",
+      "pros": [
+        "Boa capacidade",
+        "Duas saídas USB"
+      ],
+      "attention_points": [
+        "Mais pesado que baterias pequenas"
+      ],
+      "why_buy": "Carregador portátil para dias longe da tomada.",
+      "user_profile": "Perfil de demonstração"
+    },
+    "product_use_cases": [
+      {
+        "use_case": "Viagens",
+        "score": 5
+      },
+      {
+        "use_case": "Carregamento",
+        "score": 5
+      },
+      {
+        "use_case": "Trabalho",
+        "score": 3
+      },
+      {
+        "use_case": "Organização",
+        "score": 2
+      },
+      {
+        "use_case": "Bateria",
+        "score": 5
+      },
+      {
+        "use_case": "Desempenho",
+        "score": 4
+      },
+      {
+        "use_case": "Durabilidade",
+        "score": 4
+      },
+      {
+        "use_case": "Portabilidade",
+        "score": 3
+      }
+    ],
+    "product_specs": [
+      {
+        "label": "Capacidade",
+        "value": "20.000 mAh",
+        "sort_order": 0
+      },
+      {
+        "label": "Potência máxima",
+        "value": "20 W",
+        "sort_order": 1
+      },
+      {
+        "label": "Conexões",
+        "value": "USB-A e USB-C",
+        "sort_order": 2
+      },
+      {
+        "label": "Peso",
+        "value": "350 g",
+        "sort_order": 3
+      }
+    ]
+  },
+  {
+    "id": "volt-hub",
+    "category_id": "acessorios",
+    "name": "Volt Hub Connect",
+    "price": 249,
+    "old_price": null,
+    "short_description": "Mais conexões na sua mesa.",
+    "description": "Conecte periféricos e uma tela em uma porta compatível.",
+    "brand": "VoltTech",
+    "stock": 20,
+    "image_url": "https://example.invalid/product.jpg",
+    "categories": {
+      "name": "Acessórios"
+    },
+    "product_explanations": {
+      "ideal_for": "Mais conexões na sua mesa.",
+      "good_for": [
+        "Trabalho",
+        "Organização"
+      ],
+      "not_recommended_for": [
+        "Aparelhos sem USB-C compatível com vídeo"
+      ],
+      "performance_explanation": "Facilita ligar mouse, teclado e monitor; confira a compatibilidade do computador.",
+      "battery_explanation": "Usa energia do aparelho; não possui bateria própria.",
+      "display_explanation": "Saída para monitor em computadores compatíveis.",
+      "pros": [
+        "Várias portas",
+        "Fácil de transportar"
+      ],
+      "attention_points": [
+        "Vídeo depende de USB-C com modo DisplayPort"
+      ],
+      "why_buy": "Conecte periféricos e uma tela em uma porta compatível.",
+      "user_profile": "Perfil de demonstração"
+    },
+    "product_use_cases": [
+      {
+        "use_case": "Viagens",
+        "score": 4
+      },
+      {
+        "use_case": "Carregamento",
+        "score": 2
+      },
+      {
+        "use_case": "Trabalho",
+        "score": 5
+      },
+      {
+        "use_case": "Organização",
+        "score": 5
+      },
+      {
+        "use_case": "Desempenho",
+        "score": 4
+      },
+      {
+        "use_case": "Durabilidade",
+        "score": 4
+      },
+      {
+        "use_case": "Portabilidade",
+        "score": 5
+      }
+    ],
+    "product_specs": [
+      {
+        "label": "Entrada",
+        "value": "USB-C",
+        "sort_order": 0
+      },
+      {
+        "label": "Saídas",
+        "value": "HDMI e 3 USB-A",
+        "sort_order": 1
+      },
+      {
+        "label": "Vídeo",
+        "value": "Até 4K a 30 Hz",
+        "sort_order": 2
+      },
+      {
+        "label": "Compatibilidade",
+        "value": "USB-C com DisplayPort para vídeo",
+        "sort_order": 3
+      }
+    ]
+  },
+  {
+    "id": "volt-mouse",
+    "category_id": "acessorios",
+    "name": "Volt Mouse Quiet",
+    "price": 89,
+    "old_price": 119,
+    "short_description": "Conforto para estudar e trabalhar.",
+    "description": "Mouse sem fio com cliques discretos.",
+    "brand": "VoltTech",
+    "stock": 20,
+    "image_url": "https://example.invalid/product.jpg",
+    "categories": {
+      "name": "Acessórios"
+    },
+    "product_explanations": {
+      "ideal_for": "Conforto para estudar e trabalhar.",
+      "good_for": [
+        "Trabalho",
+        "Organização"
+      ],
+      "not_recommended_for": [
+        "Jogos competitivos"
+      ],
+      "performance_explanation": "Preciso para navegação, documentos e planilhas.",
+      "battery_explanation": "Funciona com pilha substituível; duração depende do uso.",
+      "display_explanation": "Sem tela; acompanha o cursor no seu computador.",
+      "pros": [
+        "Cliques discretos",
+        "Preço acessível"
+      ],
+      "attention_points": [
+        "Exige uma porta USB para o receptor"
+      ],
+      "why_buy": "Mouse sem fio com cliques discretos.",
+      "user_profile": "Perfil de demonstração"
+    },
+    "product_use_cases": [
+      {
+        "use_case": "Viagens",
+        "score": 4
+      },
+      {
+        "use_case": "Carregamento",
+        "score": 1
+      },
+      {
+        "use_case": "Trabalho",
+        "score": 5
+      },
+      {
+        "use_case": "Organização",
+        "score": 4
+      },
+      {
+        "use_case": "Desempenho",
+        "score": 3
+      },
+      {
+        "use_case": "Durabilidade",
+        "score": 3
+      },
+      {
+        "use_case": "Portabilidade",
+        "score": 5
+      }
+    ],
+    "product_specs": [
+      {
+        "label": "Conexão",
+        "value": "Receptor USB 2,4 GHz",
+        "sort_order": 0
+      },
+      {
+        "label": "Alimentação",
+        "value": "1 pilha AA",
+        "sort_order": 1
+      },
+      {
+        "label": "Botões",
+        "value": "3",
+        "sort_order": 2
+      },
+      {
+        "label": "Sensor",
+        "value": "Óptico",
+        "sort_order": 3
+      }
+    ]
+  }
+]

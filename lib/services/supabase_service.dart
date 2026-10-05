@@ -1,78 +1,82 @@
+import 'dart:convert';
+
 import 'package:supabase_flutter/supabase_flutter.dart';
-import '../controllers/volttech_store.dart';
+
 import '../models/product.dart';
 
 class SupabaseService {
   SupabaseService._();
-  static final SupabaseService instance = SupabaseService._();
+  static final instance = SupabaseService._();
+  bool enabled = false;
+  String? initializationError;
+  SupabaseClient get client {
+    if (!enabled) {
+      throw StateError('Configure a conexão antes de continuar.');
+    }
+    return Supabase.instance.client;
+  }
 
-  static const _url = String.fromEnvironment('SUPABASE_URL');
-  static const _anonKey = String.fromEnvironment('SUPABASE_ANON_KEY');
-
-  bool _enabled = false;
-  bool get enabled => _enabled;
-
+  User? get user => enabled ? client.auth.currentUser : null;
   Future<void> initialize() async {
-    if (_url.isEmpty || _anonKey.isEmpty) return;
+    const url = String.fromEnvironment(
+      'SUPABASE_URL',
+      defaultValue: String.fromEnvironment('NEXT_PUBLIC_SUPABASE_URL'),
+    );
+    const key = String.fromEnvironment(
+      'SUPABASE_PUBLISHABLE_KEY',
+      defaultValue: String.fromEnvironment(
+        'NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY',
+        defaultValue: String.fromEnvironment('SUPABASE_ANON_KEY'),
+      ),
+    );
+    if (url.isEmpty || key.isEmpty) {
+      initializationError = 'A conexão não foi configurada. Execute com dart run tool/run.dart run -d chrome.';
+      return;
+    }
     try {
-      await Supabase.initialize(url: _url, anonKey: _anonKey);
-      _enabled = true;
+      if (key.startsWith('sb_secret_')) throw const FormatException();
+      if (key.split('.').length == 3) {
+        final payload = jsonDecode(
+          utf8.decode(base64Url.decode(base64Url.normalize(key.split('.')[1]))),
+        );
+        if (payload['role'] != 'anon') throw const FormatException();
+      } else if (!key.startsWith('sb_publishable_')) {
+        throw const FormatException();
+      }
+      await Supabase.initialize(url: url, publishableKey: key);
+      enabled = true;
     } catch (_) {
-      _enabled = false;
+      initializationError = 'Não foi possível iniciar a conexão. Confira a URL e a chave pública.';
     }
   }
 
-  SupabaseClient? get _client => _enabled ? Supabase.instance.client : null;
-
-  Future<void> syncFavorite(Product product, bool favorite) async {
-    final client = _client;
-    if (client == null) return;
-    try {
-      if (favorite) {
-        await client.from('favorites').upsert({
-          'product_id': product.id,
-          'product_name': product.name,
-          'created_at': DateTime.now().toIso8601String(),
-        });
-      } else {
-        await client.from('favorites').delete().eq('product_id', product.id);
-      }
-    } catch (_) {}
+  Future<List<Product>> products() async {
+    final data = await client
+        .from('products')
+        .select(
+          '*, categories!inner(name), product_specs(*), product_explanations(*), product_use_cases(*)',
+        )
+        .order('price', ascending: true);
+    return data.map(Product.fromJson).toList();
   }
+}
 
-  Future<void> saveOrder({
-    required String customerName,
-    required String email,
-    required String address,
-  }) async {
-    final client = _client;
-    if (client == null) return;
-
-    final store = VoltTechStore.instance;
-    try {
-      final order = await client.from('orders').insert({
-        'customer_name': customerName,
-        'email': email,
-        'address': address,
-        'total': store.cartTotal,
-        'status': 'Confirmado',
-      }).select('id').single();
-
-      final orderId = order['id'];
-      final items = store.cart.entries.map((entry) {
-        final product = store.products.firstWhere((item) => item.id == entry.key);
-        return {
-          'order_id': orderId,
-          'product_id': product.id,
-          'product_name': product.name,
-          'quantity': entry.value,
-          'unit_price': product.price,
-        };
-      }).toList();
-
-      if (items.isNotEmpty) {
-        await client.from('order_items').insert(items);
-      }
-    } catch (_) {}
+String friendlyError(Object error) {
+  if (error is AuthException) {
+    if (error.code == 'invalid_credentials') {
+      return 'E-mail ou senha incorretos.';
+    }
+    if (error.code == 'email_not_confirmed') {
+      return 'Confirme seu e-mail antes de entrar.';
+    }
+    if (error.code?.contains('rate_limit') == true) {
+      return 'Muitas tentativas. Aguarde um pouco e tente novamente.';
+    }
+    return 'Não foi possível acessar sua conta. Confira os dados e tente novamente.';
   }
+  if (error is PostgrestException && error.code == 'P0001') {
+    return error.message;
+  }
+  if (error is StateError) return error.message.toString();
+  return 'Não foi possível concluir. Confira sua conexão e tente novamente.';
 }

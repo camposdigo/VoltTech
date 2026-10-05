@@ -1,55 +1,50 @@
 import 'package:flutter/material.dart';
+
 import '../controllers/volttech_store.dart';
+import '../widgets/common.dart';
 import '../widgets/product_card.dart';
+import 'auth_screen.dart';
 import 'product_details_screen.dart';
 
 class FavoritesScreen extends StatelessWidget {
   const FavoritesScreen({super.key});
-
   @override
   Widget build(BuildContext context) {
     final store = VoltTechStore.instance;
-
     return AnimatedBuilder(
       animation: store,
       builder: (context, _) {
-        final products = store.favoriteProducts;
-        if (products.isEmpty) {
-          return const Center(
-            child: Padding(
-              padding: EdgeInsets.all(32),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Icon(Icons.favorite_border_rounded, size: 64),
-                  SizedBox(height: 16),
-                  Text('Nenhum favorito ainda', style: TextStyle(fontSize: 20, fontWeight: FontWeight.w800)),
-                  SizedBox(height: 8),
-                  Text('Toque no coração de um produto para salvar aqui.', textAlign: TextAlign.center),
-                ],
-              ),
+        if (!store.signedIn) {
+          return EmptyState(
+            title: 'Suas escolhas, guardadas',
+            description: 'Entre para salvar seus favoritos e encontrar depois.',
+            icon: Icons.favorite_border,
+            action: FilledButton(
+              onPressed: () => requireLogin(context),
+              child: const Text('Entrar'),
             ),
           );
         }
-
-        return GridView.builder(
-          padding: const EdgeInsets.all(18),
-          itemCount: products.length,
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
-            childAspectRatio: .60,
-            crossAxisSpacing: 12,
-            mainAxisSpacing: 12,
-          ),
-          itemBuilder: (_, index) {
-            final product = products[index];
-            return ProductCard(
-              product: product,
-              onTap: () => Navigator.of(context).push(
-                MaterialPageRoute(builder: (_) => ProductDetailsScreen(product: product)),
-              ),
-            );
-          },
+        if (store.favoriteProducts.isEmpty) {
+          return const EmptyState(
+            title: 'Nenhum favorito ainda',
+            description:
+                'Toque no coração de um produto para guardar sua escolha.',
+            icon: Icons.favorite_border,
+          );
+        }
+        return PageBody(
+          children: [
+            const SectionTitle(
+              'Seus favoritos',
+              'Boas escolhas merecem ficar por perto.',
+            ),
+            ProductGrid(
+              products: store.favoriteProducts,
+              onSelect: (p) =>
+                  openPage(context, ProductDetailsScreen(product: p)),
+            ),
+          ],
         );
       },
     );

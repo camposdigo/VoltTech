@@ -1,109 +1,205 @@
 import 'package:flutter/material.dart';
-import '../data/mock_products.dart';
+
+import '../controllers/volttech_store.dart';
 import '../models/product.dart';
-import '../theme/app_theme.dart';
+import '../widgets/common.dart';
 import '../widgets/product_card.dart';
 import 'product_details_screen.dart';
+import 'comparison_screen.dart';
+
+class CatalogPage extends StatelessWidget {
+  final String initialCategory;
+  final bool onlyOffers;
+  const CatalogPage({
+    super.key,
+    this.initialCategory = 'Todos',
+    this.onlyOffers = false,
+  });
+  @override
+  Widget build(BuildContext context) => Scaffold(
+    appBar: AppBar(title: const Text('Catálogo')),
+    body: ProductsScreen(
+      initialCategory: initialCategory,
+      onlyOffers: onlyOffers,
+    ),
+  );
+}
 
 class ProductsScreen extends StatefulWidget {
   final String initialCategory;
-  const ProductsScreen({super.key, this.initialCategory = 'Todos'});
-
+  final bool onlyOffers;
+  const ProductsScreen({
+    super.key,
+    this.initialCategory = 'Todos',
+    this.onlyOffers = false,
+  });
   @override
   State<ProductsScreen> createState() => _ProductsScreenState();
 }
 
 class _ProductsScreenState extends State<ProductsScreen> {
-  late String selectedCategory;
-  String query = '';
-
+  late String category;
+  late bool offers;
+  final search = TextEditingController();
+  String sort = 'Menor preço';
+  double? maxPrice;
   @override
   void initState() {
     super.initState();
-    selectedCategory = widget.initialCategory;
+    category = widget.initialCategory;
+    offers = widget.onlyOffers;
   }
 
-  List<Product> get filteredProducts {
-    final normalized = query.trim().toLowerCase();
-    return mockProducts.where((product) {
-      final categoryMatch = selectedCategory == 'Todos' || product.category == selectedCategory;
-      final searchMatch = normalized.isEmpty ||
-          product.name.toLowerCase().contains(normalized) ||
-          product.category.toLowerCase().contains(normalized);
-      return categoryMatch && searchMatch;
-    }).toList();
+  @override
+  void dispose() {
+    search.dispose();
+    super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    final products = filteredProducts;
-    return ListView(
-      padding: const EdgeInsets.fromLTRB(18, 12, 18, 28),
-      children: [
-        TextField(
-          onChanged: (value) => setState(() => query = value),
-          decoration: InputDecoration(
-            hintText: 'Buscar produtos...',
-            prefixIcon: const Icon(Icons.search_rounded),
-            suffixIcon: query.isEmpty
-                ? const Icon(Icons.tune_rounded)
-                : IconButton(onPressed: () => setState(() => query = ''), icon: const Icon(Icons.close)),
-          ),
-        ),
-        const SizedBox(height: 16),
-        SizedBox(
-          height: 42,
-          child: ListView.separated(
-            scrollDirection: Axis.horizontal,
-            itemCount: mockCategories.length,
-            separatorBuilder: (_, __) => const SizedBox(width: 8),
-            itemBuilder: (_, index) {
-              final category = mockCategories[index];
-              return ChoiceChip(
-                selected: selectedCategory == category,
-                label: Text(category),
-                selectedColor: AppTheme.primary,
-                onSelected: (_) => setState(() => selectedCategory = category),
-              );
-            },
-          ),
-        ),
-        const SizedBox(height: 20),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    final store = VoltTechStore.instance;
+    return AnimatedBuilder(
+      animation: store,
+      builder: (context, _) {
+        final query = normalizeText(search.text.trim());
+        final products = store.products
+            .where(
+              (p) =>
+                  (category == 'Todos' || p.category == category) &&
+                  (!offers || p.onSale) &&
+                  (maxPrice == null || p.price <= maxPrice!) &&
+                  query.split(' ').every(p.searchable.contains),
+            )
+            .toList();
+        products.sort(
+          (a, b) => sort == 'Maior preço'
+              ? b.price.compareTo(a.price)
+              : sort == 'Nome'
+              ? a.name.compareTo(b.name)
+              : a.price.compareTo(b.price),
+        );
+        return PageBody(
           children: [
-            const Text('Catálogo', style: TextStyle(fontSize: 22, fontWeight: FontWeight.w900)),
-            Text(products.length.toString() + ' produtos', style: const TextStyle(color: AppTheme.textSecondary)),
-          ],
-        ),
-        const SizedBox(height: 14),
-        if (products.isEmpty)
-          const Padding(
-            padding: EdgeInsets.symmetric(vertical: 80),
-            child: Center(child: Text('Nenhum produto encontrado.')),
-          )
-        else
-          GridView.builder(
-            shrinkWrap: true,
-            physics: const NeverScrollableScrollPhysics(),
-            itemCount: products.length,
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
-              childAspectRatio: .60,
-              crossAxisSpacing: 12,
-              mainAxisSpacing: 12,
+            const SectionTitle(
+              'Encontre sua próxima escolha',
+              'Busque pelo produto ou pelo que você precisa fazer.',
             ),
-            itemBuilder: (_, index) {
-              final product = products[index];
-              return ProductCard(
-                product: product,
-                onTap: () => Navigator.of(context).push(
-                  MaterialPageRoute(builder: (_) => ProductDetailsScreen(product: product)),
+            TextField(
+              controller: search,
+              onChanged: (_) => setState(() {}),
+              decoration: InputDecoration(
+                hintText: 'Faculdade, bateria, notebook…',
+                prefixIcon: const Icon(Icons.search),
+                suffixIcon: search.text.isEmpty
+                    ? null
+                    : IconButton(
+                        tooltip: 'Limpar busca',
+                        onPressed: () {
+                          search.clear();
+                          setState(() {});
+                        },
+                        icon: const Icon(Icons.close),
+                      ),
+              ),
+            ),
+            const SizedBox(height: 20),
+            Wrap(
+              spacing: 8,
+              runSpacing: 8,
+              children: [
+                for (final name in [
+                  'Todos',
+                  ...store.categories.map((c) => c['name'] as String),
+                ])
+                  ChoiceChip(
+                    label: Text(name),
+                    selected: category == name,
+                    onSelected: (_) => setState(() => category = name),
+                  ),
+              ],
+            ),
+            const SizedBox(height: 16),
+            Wrap(
+              spacing: 16,
+              runSpacing: 12,
+              crossAxisAlignment: WrapCrossAlignment.center,
+              children: [
+                FilterChip(
+                  label: const Text('Em oferta'),
+                  selected: offers,
+                  onSelected: (v) => setState(() => offers = v),
                 ),
-              );
-            },
-          ),
-      ],
+                SizedBox(
+                  width: 190,
+                  child: DropdownButtonFormField<String>(
+                    initialValue: sort,
+                    decoration: const InputDecoration(labelText: 'Ordenar por'),
+                    items: [
+                      for (final s in ['Menor preço', 'Maior preço', 'Nome'])
+                        DropdownMenuItem(value: s, child: Text(s)),
+                    ],
+                    onChanged: (v) => setState(() => sort = v!),
+                  ),
+                ),
+                SizedBox(
+                  width: 200,
+                  child: DropdownButtonFormField<double>(
+                    initialValue: maxPrice ?? 0,
+                    decoration: const InputDecoration(
+                      labelText: 'Quanto quer gastar?',
+                    ),
+                    items: const [
+                      DropdownMenuItem(value: 0, child: Text('Qualquer valor')),
+                      DropdownMenuItem(value: 500, child: Text('Até R\$ 500')),
+                      DropdownMenuItem(
+                        value: 2000,
+                        child: Text('Até R\$ 2.000'),
+                      ),
+                      DropdownMenuItem(
+                        value: 4000,
+                        child: Text('Até R\$ 4.000'),
+                      ),
+                    ],
+                    onChanged: (v) =>
+                        setState(() => maxPrice = v == 0 ? null : v),
+                  ),
+                ),
+                if (store.comparison.isNotEmpty)
+                  OutlinedButton.icon(
+                    onPressed: () =>
+                        openPage(context, const ComparisonScreen()),
+                    icon: const Icon(Icons.compare_arrows),
+                    label: Text('Comparar (${store.comparison.length})'),
+                  ),
+              ],
+            ),
+            const SizedBox(height: 24),
+            Text('${products.length} produtos encontrados'),
+            const SizedBox(height: 16),
+            if (products.isEmpty)
+              EmptyState(
+                title: 'Nenhuma opção com esses filtros',
+                description: 'Tente outra necessidade ou aumente o orçamento.',
+                action: TextButton(
+                  onPressed: () => setState(() {
+                    search.clear();
+                    category = 'Todos';
+                    offers = false;
+                    maxPrice = null;
+                  }),
+                  child: const Text('Limpar filtros'),
+                ),
+              )
+            else
+              ProductGrid(
+                products: products,
+                onSelect: (p) =>
+                    openPage(context, ProductDetailsScreen(product: p)),
+              ),
+          ],
+        );
+      },
     );
   }
 }

@@ -12,5 +12,5 @@ String formatMoney(double value) {
     }
   }
 
-  return 'R\$ ' + buffer.toString() + ',' + parts.last;
+  return 'R\$ $buffer,${parts.last}';
 }

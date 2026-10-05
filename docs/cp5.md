@@ -1,43 +1,25 @@
-# Checkpoint 5 — Protótipo Funcional
+﻿# CP5 — roteiro de apresentação
 
-## Escopo entregue
+A VoltTech ajuda pessoas leigas a comprar eletrônicos pela necessidade, sem começar por especificações técnicas.
 
-A VoltTech foi evoluída para um protótipo navegável em Flutter. O catálogo usa dados mockados para garantir previsibilidade na demonstração, enquanto favoritos e pedidos possuem integração preparada com Supabase.
+1. Execute `dart run tool/run.dart run -d chrome`.
+2. Mostre a proposta na Home e abra **Me ajude a escolher**.
+3. Escolha **Notebook → Faculdade → Até R$ 3.000 → Portabilidade**.
+4. Explique a recomendação do Volt Book Study e seus pontos de atenção.
+5. Abra o produto: benefícios primeiro, especificações em seção secundária.
+6. No catálogo, pesquise `programacao` e teste categoria, preço e ofertas.
+7. Selecione dois notebooks para comparar adequação, bateria e portabilidade.
+8. Adicione um produto ao carrinho como visitante e altere a quantidade.
+9. Entre na conta; mostre a persistência do carrinho e salve um favorito.
+10. Finalize com endereço de exemplo e Pix simulado. Nenhum dado de cartão é solicitado.
+11. Abra o histórico e confira os itens e o total do pedido.
+12. Atualize a página para mostrar persistência de sessão e dados.
+13. Faça logout e mostre que favoritos/pedidos da conta não ficam acessíveis.
 
-## Fluxo demonstrável
+## Preparação
 
-Home -> Catálogo -> Produto -> Carrinho -> Checkout -> Confirmação.
+O banco deste ambiente já recebeu migrations e seed. Crie sua conta antes da apresentação e confirme o e-mail se solicitado. A conexão com o Supabase é necessária; o aplicativo não disfarça falhas com pedidos ou catálogo locais.
 
-Também foram implementados Favoritos e Perfil.
+Os produtos são modelos fictícios com características realistas para a CP5, persistidos no banco. Imagens, preços e avaliações de adequação são ilustrativos. O pagamento e a entrega são simulados.
 
-## Estratégia de dados
-
-Os produtos são locais e simulados. Essa decisão evita dependência de API externa durante a apresentação e permite cobrir cenários de preço, desconto, avaliação, estoque e categorias.
-
-## Supabase
-
-O serviço em lib/services/supabase_service.dart inicializa o Supabase somente quando SUPABASE_URL e SUPABASE_ANON_KEY forem fornecidos via dart-define. Sem configuração, o app permanece em modo mock.
-
-O arquivo supabase/schema.sql contém as tabelas necessárias para favoritos, pedidos e itens dos pedidos.
-
-## Ambiente de teste
-
-Ambiente recomendado para a apresentação:
-
-flutter run -d chrome
-
-Antes da aula, executar flutter doctor e flutter pub get.
-
-## Checklist pré-apresentação
-
-- Abrir Home sem erros
-- Testar busca
-- Testar filtro por categoria
-- Abrir detalhes de produto
-- Favoritar e desfavoritar
-- Adicionar ao carrinho
-- Aumentar e reduzir quantidade
-- Abrir checkout
-- Confirmar pedido
-- Voltar à Home
-- Validar status do Supabase no Perfil
+Resultados técnicos e limitações: [validação](validacao.md). Arquitetura e configuração: [README](../README.md).
